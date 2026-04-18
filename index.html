@@ -1,11 +1,769 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyFigmaClone</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HelpHub AI</title>
+    <link rel="stylesheet" href="style.css">
+    <link href__="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
-    <h1>Hello World!</h1>
+
+    <!-- ========== NAVBAR ========== -->
+    <header class="navbar">
+        <div class="navbar-logo">
+            <div class="logo-icon">H</div>
+            <span class="logo-text">HelpHub AI</span>
+        </div>
+        <nav class="navbar-nav">
+            <a href__="#" class="nav-link active" onclick="showPage('home', this)">Home</a>
+            <a href__="#" class="nav-link" onclick="showPage('dashboard', this)">Dashboard</a>
+            <a href__="#" class="nav-link" onclick="showPage('explore', this)">Explore</a>
+            <a href__="#" class="nav-link" onclick="showPage('leaderboard', this)">Leaderboard</a>
+            <a href__="#" class="nav-link" onclick="showPage('ai-center', this)">AI Center</a>
+            <a href__="#" class="nav-link" onclick="showPage('messages', this)">Messages</a>
+        </nav>
+        <div class="navbar-right">
+            <a href__="#" class="nav-link" onclick="showPage('notifications', this)">Notifications</a>
+            <button class="btn-primary" onclick="showPage('create-request', document.querySelector('.nav-link'))">Post a
+                request</button>
+        </div>
+    </header>
+
+    <!-- ========== PAGE: HOME ========== -->
+    <main id="page-home" class="page active">
+        <div class="container">
+            <section class="hero-grid">
+                <div class="card hero-left">
+                    <div class="label">Smit Grand Coding Night 2026</div>
+                    <h1 class="heading-xl">Find help faster.<br />Become help that matters.</h1>
+                    <p class="text-muted mt-md">HelpHub AI is a community-powered support network for students, mentors,
+                        creators, and builders. Ask for help, offer help, track impact, and let AI surface smarter
+                        matches across the platform.</p>
+                    <div class="btn-group mt-lg">
+                        <button class="btn-primary">Open product demo</button>
+                        <button class="btn-ghost" onclick="showPage('create-request', null)">Post a request</button>
+                    </div>
+                    <div class="stats-grid mt-xl">
+                        <div class="stat-card">
+                            <div class="label">Members</div>
+                            <div class="stat-value">384+</div>
+                            <div class="stat-desc">Students, mentors, and helpers in the loop.</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Requests</div>
+                            <div class="stat-value">72+</div>
+                            <div class="stat-desc">Support posts shared across learning journeys.</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="label">Solved</div>
+                            <div class="stat-value">69+</div>
+                            <div class="stat-desc">Problems resolved through fast community action.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dark-card hero-right">
+                    <div class="orange-dot"></div>
+                    <div class="label-light">Live Product Feel</div>
+                    <h2 class="heading-lg text-white mt-sm">More than a form.<br />More like an ecosystem.</h2>
+                    <p class="text-white-muted mt-md">A polished multi-page experience with AI summaries, trust scores,
+                        contribution signals, notifications, and leaderboard momentum.</p>
+                    <div class="feature-list mt-lg">
+                        <div class="feature-item">
+                            <div class="feature-title">AI request intelligence</div>
+                            <div class="feature-desc">Auto-categorization, urgency detection, tags, rewrite suggestions,
+                                and trend snapshots.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-title">Community trust graph</div>
+                            <div class="feature-desc">Badges, helper rankings, trust score boosts, and visible
+                                contribution history.</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-title">100%</div>
+                            <div class="feature-desc">Top trust score currently active across the sample mentor network.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-xxl">
+                <div class="label">Core Flow</div>
+                <div class="section-header mt-sm">
+                    <h2 class="heading-md">From struggling alone to solving together</h2>
+                    <button class="btn-ghost">Try onboarding AI</button>
+                </div>
+                <div class="grid-3 mt-lg">
+                    <div class="card p-md">
+                        <h3 class="card-title">Ask for help clearly</h3>
+                        <p class="text-muted">Create structured requests with category, urgency, AI suggestions, and
+                            tags that attract the right people.</p>
+                    </div>
+                    <div class="card p-md">
+                        <h3 class="card-title">Discover the right people</h3>
+                        <p class="text-muted">Use the explore feed, helper lists, notifications, and messaging to move
+                            quickly once a match happens.</p>
+                    </div>
+                    <div class="card p-md">
+                        <h3 class="card-title">Track real contribution</h3>
+                        <p class="text-muted">Trust scores, badges, solved requests, and rankings help the community
+                            recognize meaningful support.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-xxl">
+                <div class="label">Featured Requests</div>
+                <div class="section-header mt-sm">
+                    <h2 class="heading-md">Community problems currently in motion</h2>
+                    <button class="btn-ghost" onclick="showPage('explore', null)">View full feed</button>
+                </div>
+                <div class="grid-3 mt-lg">
+                    <div class="card p-md">
+                        <div class="tag-row"><span class="tag">Web Development</span><span
+                                class="tag tag-red">High</span><span class="tag">Solved</span></div>
+                        <h3 class="card-title mt-sm">Need help</h3>
+                        <p class="text-muted">helpn needed</p>
+                        <div class="card-footer">
+                            <div>
+                                <div class="user-name">Ayesha Khan</div>
+                                <div class="user-meta">Karachi • 1 helper interested</div>
+                            </div>
+                            <button class="btn-ghost btn-sm" onclick="showPage('request-detail', null)">Open
+                                details</button>
+                        </div>
+                    </div>
+                    <div class="card p-md">
+                        <div class="tag-row"><span class="tag">Web Development</span><span
+                                class="tag tag-red">High</span><span class="tag">Solved</span></div>
+                        <h3 class="card-title mt-sm">Need help making my portfolio responsive before demo day</h3>
+                        <p class="text-muted">My HTML/CSS portfolio breaks on tablets and I need layout guidance before
+                            tomorrow evening.</p>
+                        <div class="tag-row mt-sm"><span class="tag">HTML/CSS</span><span
+                                class="tag">Responsive</span><span class="tag">Portfolio</span></div>
+                        <div class="card-footer">
+                            <div>
+                                <div class="user-name">Sara Noor</div>
+                                <div class="user-meta">Karachi • 1 helper interested</div>
+                            </div>
+                            <button class="btn-ghost btn-sm" onclick="showPage('request-detail', null)">Open
+                                details</button>
+                        </div>
+                    </div>
+                    <div class="card p-md">
+                        <div class="tag-row"><span class="tag">Design</span><span class="tag">Medium</span><span
+                                class="tag">Open</span></div>
+                        <h3 class="card-title mt-sm">Looking for Figma feedback on a volunteer event poster</h3>
+                        <p class="text-muted">I have a draft poster for a campus community event and want sharper
+                            hierarchy, spacing, and CTA copy.</p>
+                        <div class="tag-row mt-sm"><span class="tag">Figma</span><span class="tag">Poster</span><span
+                                class="tag">Design Review</span></div>
+                        <div class="card-footer">
+                            <div>
+                                <div class="user-name">Ayesha Khan</div>
+                                <div class="user-meta">Lahore • 1 helper interested</div>
+                            </div>
+                            <button class="btn-ghost btn-sm" onclick="showPage('request-detail', null)">Open
+                                details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: DASHBOARD ========== -->
+    <main id="page-dashboard" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">Dashboard</div>
+                <h1 class="heading-xl text-white mt-sm">Welcome back, Ayesha.<br />Your community is active.</h1>
+                <p class="text-white-muted mt-md">Track your open requests, helper matches, and trust momentum from a
+                    single hub.</p>
+            </div>
+            <div class="grid-3 mt-lg">
+                <div class="card p-md">
+                    <div class="label">Open Requests</div>
+                    <div class="big-number">3</div>
+                </div>
+                <div class="card p-md">
+                    <div class="label">Matches Today</div>
+                    <div class="big-number">5</div>
+                </div>
+                <div class="card p-md">
+                    <div class="label">Trust Score</div>
+                    <div class="big-number">100%</div>
+                </div>
+            </div>
+            <div class="section-header mt-xl">
+                <h2 class="heading-sm">Your active requests</h2>
+                <button class="btn-primary" onclick="showPage('create-request', null)">New request</button>
+            </div>
+            <div class="grid-2 mt-lg">
+                <div class="card p-md">
+                    <div class="tag-row"><span class="tag">Career</span><span class="tag">Low</span><span
+                            class="tag">Solved</span></div>
+                    <h3 class="card-title mt-sm">Need mock interview support for internship applications</h3>
+                    <p class="text-muted">Applying to frontend internships and need someone to practice behavioral and
+                        technical interview questions with me.</p>
+                    <div class="tag-row mt-sm"><span class="tag">Interview Prep</span><span
+                            class="tag">Career</span><span class="tag">Frontend</span></div>
+                    <div class="card-footer">
+                        <div>
+                            <div class="user-name">Sara Noor</div>
+                            <div class="user-meta">Remote • 2 helpers interested</div>
+                        </div><button class="btn-ghost btn-sm" onclick="showPage('request-detail', null)">Open
+                            details</button>
+                    </div>
+                </div>
+                <div class="card p-md">
+                    <div class="tag-row"><span class="tag">Design</span><span class="tag">Medium</span><span
+                            class="tag">Open</span></div>
+                    <h3 class="card-title mt-sm">Looking for Figma feedback on a volunteer event poster</h3>
+                    <p class="text-muted">I have a draft poster for a campus community event and want sharper hierarchy,
+                        spacing, and CTA copy.</p>
+                    <div class="tag-row mt-sm"><span class="tag">Figma</span><span class="tag">Poster</span><span
+                            class="tag">Design Review</span></div>
+                    <div class="card-footer">
+                        <div>
+                            <div class="user-name">Ayesha Khan</div>
+                            <div class="user-meta">Lahore • 1 helper interested</div>
+                        </div><button class="btn-ghost btn-sm" onclick="showPage('request-detail', null)">Open
+                            details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: EXPLORE ========== -->
+    <main id="page-explore" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">Explore / Feed</div>
+                <h1 class="heading-xl text-white mt-sm">Browse help requests with filterable<br />community context.
+                </h1>
+                <p class="text-white-muted mt-md">Filter by category, urgency, skills, and location to surface the best
+                    matches.</p>
+            </div>
+            <div class="explore-layout mt-lg">
+                <aside class="card filter-panel p-md">
+                    <div class="label">Filters</div>
+                    <h3 class="heading-sm mt-sm">Refine the feed</h3>
+                    <div class="form-group mt-lg">
+                        <label>Category</label>
+                        <select id="filter-category">
+                            <option>All categories</option>
+                            <option>Web Development</option>
+                            <option>Design</option>
+                            <option>Career</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Urgency</label>
+                        <select id="filter-urgency">
+                            <option>All urgency levels</option>
+                            <option>High</option>
+                            <option>Medium</option>
+                            <option>Low</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Skills</label>
+                        <input type="text" placeholder="React, Figma, Git/GitHub" />
+                    </div>
+                    <div class="form-group">
+                        <label>Location</label>
+                        <input type="text" placeholder="Karachi, Lahore, Remote" />
+                    </div>
+                    <button class="btn-primary mt-md" style="width:100%" onclick="filterRequests()">Apply
+                        Filters</button>
+                </aside>
+                <div id="explore-cards" class="explore-cards">
+                    <div class="card p-md">
+                        <div class="tag-row"><span class="tag">Web Development</span><span
+                                class="tag tag-red">High</span><span class="tag">Solved</span></div>
+                        <h3 class="card-title mt-sm">Need help</h3>
+                        <p class="text-muted">helpn needed</p>
+                        <div class="card-footer">
+                            <div>
+                                <div class="user-name">Ayesha Khan</div>
+                                <div class="user-meta">Karachi • 1 helper interested</div>
+                            </div><button class="btn-ghost btn-sm" onclick="showPage('request-detail',null)">Open
+                                details</button>
+                        </div>
+                    </div>
+                    <div class="card p-md">
+                        <div class="tag-row"><span class="tag">Web Development</span><span
+                                class="tag tag-red">High</span><span class="tag">Solved</span></div>
+                        <h3 class="card-title mt-sm">Need help making my portfolio responsive before demo day</h3>
+                        <p class="text-muted">My HTML/CSS portfolio breaks on tablets and I need layout guidance before
+                            tomorrow evening.</p>
+                        <div class="tag-row mt-sm"><span class="tag">HTML/CSS</span><span
+                                class="tag">Responsive</span><span class="tag">Portfolio</span></div>
+                        <div class="card-footer">
+                            <div>
+                                <div class="user-name">Sara Noor</div>
+                                <div class="user-meta">Karachi • 1 helper interested</div>
+                            </div><button class="btn-ghost btn-sm" onclick="showPage('request-detail',null)">Open
+                                details</button>
+                        </div>
+                    </div>
+                    <div class="card p-md">
+                        <div class="tag-row"><span class="tag">Design</span><span class="tag">Medium</span><span
+                                class="tag">Open</span></div>
+                        <h3 class="card-title mt-sm">Looking for Figma feedback on a volunteer event poster</h3>
+                        <p class="text-muted">I have a draft poster for a campus community event and want sharper
+                            hierarchy, spacing, and CTA copy.</p>
+                        <div class="tag-row mt-sm"><span class="tag">Figma</span><span class="tag">Poster</span><span
+                                class="tag">Design Review</span></div>
+                        <div class="card-footer">
+                            <div>
+                                <div class="user-name">Ayesha Khan</div>
+                                <div class="user-meta">Lahore • 1 helper interested</div>
+                            </div><button class="btn-ghost btn-sm" onclick="showPage('request-detail',null)">Open
+                                details</button>
+                        </div>
+                    </div>
+                    <div class="card p-md">
+                        <div class="tag-row"><span class="tag">Career</span><span class="tag">Low</span><span
+                                class="tag">Solved</span></div>
+                        <h3 class="card-title mt-sm">Need mock interview support for internship applications</h3>
+                        <p class="text-muted">Applying to frontend internships and need someone to practice behavioral
+                            and technical interview questions with me.</p>
+                        <div class="tag-row mt-sm"><span class="tag">Interview Prep</span><span
+                                class="tag">Career</span><span class="tag">Frontend</span></div>
+                        <div class="card-footer">
+                            <div>
+                                <div class="user-name">Sara Noor</div>
+                                <div class="user-meta">Remote • 2 helpers interested</div>
+                            </div><button class="btn-ghost btn-sm" onclick="showPage('request-detail',null)">Open
+                                details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: AI CENTER ========== -->
+    <main id="page-ai-center" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">AI Center</div>
+                <h1 class="heading-xl text-white mt-sm">See what the platform intelligence<br />is noticing.</h1>
+                <p class="text-white-muted mt-md">AI-like insights summarize demand trends, helper readiness, urgency
+                    signals, and request recommendations.</p>
+            </div>
+            <div class="grid-3 mt-lg">
+                <div class="card p-md">
+                    <div class="label">Trend Pulse</div>
+                    <h3 class="heading-sm mt-sm">Web<br />Development</h3>
+                    <p class="text-muted mt-sm">Most common support area based on active community requests.</p>
+                </div>
+                <div class="card p-md">
+                    <div class="label">Urgency Watch</div>
+                    <div class="big-number">2</div>
+                    <p class="text-muted">Requests currently flagged high priority by the urgency detector.</p>
+                </div>
+                <div class="card p-md">
+                    <div class="label">Mentor Pool</div>
+                    <div class="big-number">2</div>
+                    <p class="text-muted">Trusted helpers with strong response history and contribution signals.</p>
+                </div>
+            </div>
+            <div class="card mt-lg p-lg">
+                <div class="label">AI Recommendations</div>
+                <h2 class="heading-sm mt-sm">Requests needing attention</h2>
+                <div class="ai-list mt-lg">
+                    <div class="ai-item">
+                        <h4 class="ai-item-title">Need help</h4>
+                        <p class="text-muted">AI summary: Web Development request with high urgency. Best suited for
+                            members with relevant expertise.</p>
+                        <div class="tag-row mt-sm"><span class="tag">Web Development</span><span
+                                class="tag tag-red">High</span></div>
+                    </div>
+                    <div class="ai-item">
+                        <h4 class="ai-item-title">Need help making my portfolio responsive before demo day</h4>
+                        <p class="text-muted">Responsive layout issue with a short deadline. Best helpers are frontend
+                            mentors comfortable with CSS grids and media queries.</p>
+                        <div class="tag-row mt-sm"><span class="tag">Web Development</span><span
+                                class="tag tag-red">High</span></div>
+                    </div>
+                    <div class="ai-item">
+                        <h4 class="ai-item-title">Looking for Figma feedback on a volunteer event poster</h4>
+                        <p class="text-muted">A visual design critique request where feedback on hierarchy, spacing, and
+                            messaging would create the most value.</p>
+                        <div class="tag-row mt-sm"><span class="tag">Design</span><span class="tag">Medium</span></div>
+                    </div>
+                    <div class="ai-item">
+                        <h4 class="ai-item-title">Need mock interview support for internship applications</h4>
+                        <p class="text-muted">Career coaching request focused on confidence-building, behavioral
+                            answers, and entry-level frontend interviews.</p>
+                        <div class="tag-row mt-sm"><span class="tag">Career</span><span class="tag">Low</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: LEADERBOARD ========== -->
+    <main id="page-leaderboard" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">Leaderboard</div>
+                <h1 class="heading-xl text-white mt-sm">Recognize the people who keep<br />the community moving.</h1>
+                <p class="text-white-muted mt-md">Trust score, contribution count, and badges create visible momentum
+                    for reliable helpers.</p>
+            </div>
+            <div class="grid-2 mt-lg">
+                <div class="card p-lg">
+                    <div class="label">Top Helpers</div>
+                    <h3 class="heading-sm mt-sm">Rankings</h3>
+                    <div class="rank-list mt-lg">
+                        <div class="rank-item">
+                            <div class="avatar avatar-orange">AK</div>
+                            <div class="rank-info">
+                                <div class="rank-name">#1 Ayesha Khan</div>
+                                <div class="rank-skills">Figma, UI/UX, HTML/CSS</div>
+                            </div>
+                            <div class="rank-score">
+                                <div class="score">100%</div>
+                                <div class="contributions">35 contributions</div>
+                            </div>
+                        </div>
+                        <div class="rank-item">
+                            <div class="avatar avatar-dark">HA</div>
+                            <div class="rank-info">
+                                <div class="rank-name">#2 Hassan Ali</div>
+                                <div class="rank-skills">JavaScript, React, Git/GitHub</div>
+                            </div>
+                            <div class="rank-score">
+                                <div class="score">88%</div>
+                                <div class="contributions">24 contributions</div>
+                            </div>
+                        </div>
+                        <div class="rank-item">
+                            <div class="avatar avatar-orange">SN</div>
+                            <div class="rank-info">
+                                <div class="rank-name">#3 Sara Noor</div>
+                                <div class="rank-skills">Python, Data Analysis</div>
+                            </div>
+                            <div class="rank-score">
+                                <div class="score">74%</div>
+                                <div class="contributions">11 contributions</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-lg">
+                    <div class="label">Badge System</div>
+                    <h3 class="heading-sm mt-sm">Trust and achievement</h3>
+                    <div class="badge-list mt-lg">
+                        <div class="badge-item">
+                            <div class="badge-name">Ayesha Khan</div>
+                            <div class="badge-tag">Design Ally • Top Mentor</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:100%"></div>
+                            </div>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-name">Hassan Ali</div>
+                            <div class="badge-tag">Code Rescuer • Bug Hunter</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:85%"></div>
+                            </div>
+                        </div>
+                        <div class="badge-item">
+                            <div class="badge-name">Sara Noor</div>
+                            <div class="badge-tag">Community Voice</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width:65%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: PROFILE ========== -->
+    <main id="page-profile" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">Profile</div>
+                <h1 class="heading-xl text-white mt-sm">Ayesha Khan</h1>
+                <p class="text-white-muted mt-sm">Both • Karachi</p>
+            </div>
+            <div class="grid-2 mt-lg">
+                <div class="card p-lg">
+                    <div class="label">Public Profile</div>
+                    <h2 class="heading-sm mt-sm">Skills and reputation</h2>
+                    <div class="profile-stats mt-lg">
+                        <div class="profile-row"><span class="muted">Trust score</span><span class="bold">100%</span>
+                        </div>
+                        <div class="profile-row"><span class="muted">Contributions</span><span class="bold">35</span>
+                        </div>
+                        <div class="profile-row-col"><span class="muted">Skills</span>
+                            <div class="tag-row mt-sm"><span class="tag">Figma</span><span class="tag">UI/UX</span><span
+                                    class="tag">HTML/CSS</span><span class="tag">Career Guidance</span></div>
+                        </div>
+                        <div class="profile-row-col"><span class="muted">Badges</span>
+                            <div class="tag-row mt-sm"><span class="tag">Design Ally</span><span class="tag">Fast
+                                    Responder</span><span class="tag">Top Mentor</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-lg">
+                    <div class="label">Edit Profile</div>
+                    <h2 class="heading-sm mt-sm">Update your identity</h2>
+                    <form class="profile-form mt-lg" onsubmit="saveProfile(event)">
+                        <div class="grid-2-form">
+                            <div class="form-group"><label>Name</label><input type="text" value="Ayesha Khan"
+                                    id="profile-name" /></div>
+                            <div class="form-group"><label>Location</label><input type="text" value="Karachi"
+                                    id="profile-location" /></div>
+                        </div>
+                        <div class="form-group"><label>Skills</label><input type="text"
+                                value="Figma, UI/UX, HTML/CSS, Career Guidance" id="profile-skills" /></div>
+                        <div class="form-group"><label>Interests</label><input type="text"
+                                value="Hackathons, UI/UX, Community Building" id="profile-interests" /></div>
+                        <button type="submit" class="btn-primary mt-md" style="width:100%">Save profile</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: MESSAGES ========== -->
+    <main id="page-messages" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">Interaction / Messaging</div>
+                <h1 class="heading-xl text-white mt-sm">Keep support moving through<br />direct communication.</h1>
+                <p class="text-white-muted mt-md">Basic messaging gives helpers and requesters a clear follow-up path
+                    once a match happens.</p>
+            </div>
+            <div class="grid-2 mt-lg">
+                <div class="card p-lg">
+                    <div class="label">Conversation Stream</div>
+                    <h3 class="heading-sm mt-sm">Recent messages</h3>
+                    <div id="messages-list" class="msg-list mt-lg">
+                        <div class="msg-item">
+                            <div class="msg-body">
+                                <div class="msg-from">Ayesha Khan → Sara Noor</div>
+                                <p class="text-muted">I checked your portfolio request. Share the breakpoint screenshots
+                                    and I can suggest fixes.</p>
+                            </div><span class="msg-time">09:45 AM</span>
+                        </div>
+                        <div class="msg-item">
+                            <div class="msg-body">
+                                <div class="msg-from">Hassan Ali → Ayesha Khan</div>
+                                <p class="text-muted">Your event poster concept is solid. I would tighten the CTA and
+                                    reduce the background texture.</p>
+                            </div><span class="msg-time">11:10 AM</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-lg">
+                    <div class="label">Send Message</div>
+                    <h3 class="heading-sm mt-sm">Start a conversation</h3>
+                    <form class="msg-form mt-lg" onsubmit="sendMessage(event)">
+                        <div class="form-group"><label>To</label><select id="msg-to">
+                                <option>Ayesha Khan</option>
+                                <option>Hassan Ali</option>
+                                <option>Sara Noor</option>
+                            </select></div>
+                        <div class="form-group"><label>Message</label><textarea id="msg-text" rows="4"
+                                placeholder="Share support details, ask for files, or suggest next steps."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary mt-md" style="width:100%">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: NOTIFICATIONS ========== -->
+    <main id="page-notifications" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">Notifications</div>
+                <h1 class="heading-xl text-white mt-sm">Stay updated on requests,<br />helpers, and trust signals.</h1>
+            </div>
+            <div class="card p-lg mt-lg">
+                <div class="label">Live Updates</div>
+                <h2 class="heading-sm mt-sm">Notification feed</h2>
+                <div class="notif-list mt-lg" id="notif-list">
+                    <div class="notif-item">
+                        <div class="notif-text">
+                            <div class="notif-title">"Need help" was marked as solved</div>
+                            <div class="notif-sub">Status • Just now</div>
+                        </div><button class="tag-btn unread" onclick="markRead(this)">Unread</button>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-text">
+                            <div class="notif-title">Ayesha Khan offered help on "Need help"</div>
+                            <div class="notif-sub">Match • Just now</div>
+                        </div><button class="tag-btn unread" onclick="markRead(this)">Unread</button>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-text">
+                            <div class="notif-title">Your request "Need help" is now live in the community feed</div>
+                            <div class="notif-sub">Request • Just now</div>
+                        </div><button class="tag-btn unread" onclick="markRead(this)">Unread</button>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-text">
+                            <div class="notif-title">New helper matched to your responsive portfolio request</div>
+                            <div class="notif-sub">Match • 12 min ago</div>
+                        </div><button class="tag-btn unread" onclick="markRead(this)">Unread</button>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-text">
+                            <div class="notif-title">Your trust score increased after a solved request</div>
+                            <div class="notif-sub">Reputation • 1 hr ago</div>
+                        </div><button class="tag-btn unread" onclick="markRead(this)">Unread</button>
+                    </div>
+                    <div class="notif-item">
+                        <div class="notif-text">
+                            <div class="notif-title">AI Center detected rising demand for interview prep</div>
+                            <div class="notif-sub">Insight • Today</div>
+                        </div><button class="tag-btn read">Read</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: CREATE REQUEST ========== -->
+    <main id="page-create-request" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">Create Request</div>
+                <h1 class="heading-xl text-white mt-sm">Turn a rough problem into a<br />clear help request.</h1>
+                <p class="text-white-muted mt-md">Use built-in AI suggestions for category, urgency, tags, and a
+                    stronger description rewrite.</p>
+            </div>
+            <div class="create-layout mt-lg">
+                <div class="card p-lg">
+                    <form onsubmit="publishRequest(event)">
+                        <div class="form-group"><label>Title</label><input type="text" id="req-title"
+                                placeholder="Need review on my JavaScript quiz app before submission" /></div>
+                        <div class="form-group"><label>Description</label><textarea id="req-desc" rows="5"
+                                placeholder="Explain the challenge, your current progress, deadline, and what kind of help would be useful."></textarea>
+                        </div>
+                        <div class="grid-2-form">
+                            <div class="form-group"><label>Tags</label><input type="text" id="req-tags"
+                                    placeholder="JavaScript, Debugging, Review" /></div>
+                            <div class="form-group"><label>Category</label><select id="req-category">
+                                    <option>Web Development</option>
+                                    <option>Design</option>
+                                    <option>Career</option>
+                                </select></div>
+                        </div>
+                        <div class="form-group" style="max-width:50%"><label>Urgency</label><select id="req-urgency">
+                                <option>High</option>
+                                <option>Medium</option>
+                                <option>Low</option>
+                            </select></div>
+                        <div class="btn-group mt-md">
+                            <button type="button" class="btn-ghost" onclick="applyAI()">Apply AI suggestions</button>
+                            <button type="submit" class="btn-primary">Publish request</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card p-lg">
+                    <div class="label">AI Assistant</div>
+                    <h3 class="heading-sm mt-sm">Smart request guidance</h3>
+                    <div class="ai-guidance mt-lg">
+                        <div class="guidance-row"><span class="muted">Suggested category</span><span id="ai-cat"
+                                class="bold">Community</span></div>
+                        <div class="guidance-row"><span class="muted">Detected urgency</span><span id="ai-urg"
+                                class="bold">Low</span></div>
+                        <div class="guidance-row"><span class="muted">Suggested tags</span><span id="ai-tags"
+                                class="bold">Add more detail for smarter tags</span></div>
+                        <div class="guidance-row last"><span class="muted">Rewrite suggestion</span><span
+                                id="ai-rewrite" class="bold">Start describing the challenge to generate a stronger
+                                version.</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ========== PAGE: REQUEST DETAIL ========== -->
+    <main id="page-request-detail" class="page">
+        <div class="container">
+            <div class="dark-card hero-banner">
+                <div class="label-light">Request Detail</div>
+                <div class="tag-row mt-sm">
+                    <span class="tag tag-light">Career</span>
+                    <span class="tag tag-light">Low</span>
+                    <span class="tag tag-green">Solved</span>
+                </div>
+                <h1 class="heading-xl text-white mt-sm">Need mock interview support for<br />internship applications
+                </h1>
+                <p class="text-white-muted mt-md">Applying to frontend internships and need someone to practice
+                    behavioral and technical interview questions with me.</p>
+            </div>
+            <div class="grid-2 mt-lg">
+                <div class="card p-lg">
+                    <div class="label">AI Summary</div>
+                    <div class="ai-author mt-md">
+                        <div class="avatar avatar-teal">H</div><span class="bold">HelpHub AI</span>
+                    </div>
+                    <p class="text-muted mt-md">Career coaching request focused on confidence-building, behavioral
+                        answers, and entry-level frontend interviews.</p>
+                    <div class="tag-row mt-md"><span class="tag">Interview Prep</span><span
+                            class="tag">Career</span><span class="tag">Frontend</span></div>
+                </div>
+                <div class="card p-lg">
+                    <div class="label">Requester</div>
+                    <div class="ai-author mt-lg">
+                        <div class="avatar avatar-orange">SN</div>
+                        <div>
+                            <div class="bold">Sara Noor</div>
+                            <div class="text-xs-muted">Remote • 2 helpers interested</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-lg">
+                    <div class="label">Actions</div>
+                    <div class="btn-group mt-md">
+                        <button class="btn-primary" onclick="alert('You offered to help!')">I can help</button>
+                        <button class="btn-ghost" onclick="alert('Marked as solved!')">Mark as solved</button>
+                    </div>
+                </div>
+                <div class="card p-lg">
+                    <div class="label">Helpers</div>
+                    <h3 class="heading-sm mt-sm">People ready to support</h3>
+                    <div class="rank-list mt-lg">
+                        <div class="rank-item">
+                            <div class="avatar avatar-orange">AK</div>
+                            <div class="rank-info">
+                                <div class="rank-name">Ayesha Khan</div>
+                                <div class="rank-skills">Figma, UI/UX, HTML/CSS</div>
+                            </div><span class="trust-badge">Trust 100%</span>
+                        </div>
+                        <div class="rank-item">
+                            <div class="avatar avatar-dark">HA</div>
+                            <div class="rank-info">
+                                <div class="rank-name">Hassan Ali</div>
+                                <div class="rank-skills">JavaScript, React, Git/GitHub</div>
+                            </div><span class="trust-badge">Trust 88%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
